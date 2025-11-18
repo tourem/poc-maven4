@@ -4,8 +4,8 @@
 ###
 
 # Emplacements Maven 3 et Maven 4
-export MAVEN3_HOME="/opt/homebrew/Cellar/maven/3.9.9"        # <-- adapte selon ton chemin
-export MAVEN4_HOME="/Users/mtoure/install/apache-maven-4.0.0-rc-5" # <-- adapte selon ton chemin
+export MAVEN3_HOME="$HOME/tools/apache-maven-3.9.9"        # <-- adapte selon ton chemin
+export MAVEN4_HOME="$HOME/tools/apache-maven-4.0.0-beta-3" # <-- adapte selon ton chemin
 
 # Fonction : utiliser Maven 3
 use_maven3() {
