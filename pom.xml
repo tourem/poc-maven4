@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.1.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,14 +19,14 @@
     <name>Maven 4 Demo - Parent</name>
     <description>Projet de démonstration des fonctionnalités Maven 4 avec Spring Boot 3</description>
 
-    <modules>
-        <module>maven4-common</module>
-        <module>maven4-service</module>
-        <module>maven4-web</module>
-        <module>maven4-batch</module>
-        <module>maven4-security</module>
-        <module>maven4-monitoring</module>
-    </modules>
+    <subprojects>
+        <subproject>maven4-common</subproject>
+        <subproject>maven4-service</subproject>
+        <subproject>maven4-web</subproject>
+        <subproject>maven4-batch</subproject>
+        <subproject>maven4-security</subproject>
+        <subproject>maven4-monitoring</subproject>
+    </subprojects>
 
     <properties>
         <java.version>17</java.version>
@@ -184,6 +184,19 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>6.23.0</version>
+                <configuration>
+                    <exportDatatables>true</exportDatatables>
+                    <activeRecipes>
+                        <recipe>org.openrewrite.maven.MigrateToMaven4</recipe>
+                    </activeRecipes>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
