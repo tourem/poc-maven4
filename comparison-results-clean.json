@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-11-18T22:40:47Z",
+  "project": "poc-demo-maven4",
+  "maven3": {
+    "version": "3.9.9",
+    "tests": {
+      "clean_package_no_tests": {
+        "name": "Clean package (sans tests)",
+        "command": "clean package -DskipTests",
+        "duration": 6,
+        "success": true
+      },
+      "clean_package_with_tests": {
+        "name": "Clean package (avec tests)",
+        "command": "clean package",
+        "duration": 11,
+        "success": false
+      },
+      "package_cached_no_tests": {
+        "name": "Package avec cache (sans tests)",
+        "command": "package -DskipTests",
+        "duration": 2,
+        "success": true
+      },
+      "test_only": {
+        "name": "Exécution des tests",
+        "command": "test",
+        "duration": 5,
+        "success": false
+      },
+      "dependency_tree": {
+        "name": "Dependency tree",
+        "command": "dependency:tree",
+        "duration": 2,
+        "success": true
+      },
+      "parallel_build": {
+        "name": "Build parallèle (-T 4)",
+        "command": "clean package -T 4 -DskipTests",
+        "duration": 5,
+        "success": true
+      }
+    }
+  },
+  "maven4": {
+    "version": "4.0.0-rc-5",
+    "tests": {
+      "clean_package_no_tests": {
+        "name": "Clean package (sans tests)",
+        "command": "clean package -DskipTests",
+        "duration": 48,
+        "success": true
+      },
+      "clean_package_with_tests": {
+        "name": "Clean package (avec tests)",
+        "command": "clean package",
+        "duration": 22,
+        "success": false
+      },
+      "package_cached_no_tests": {
+        "name": "Package avec cache (sans tests)",
+        "command": "package -DskipTests",
+        "duration": 5,
+        "success": true
+      },
+      "test_only": {
+        "name": "Exécution des tests",
+        "command": "test",
+        "duration": 11,
+        "success": false
+      },
+      "dependency_tree": {
+        "name": "Dependency tree",
+        "command": "dependency:tree",
+        "duration": 10,
+        "success": true
+      },
+      "parallel_build": {
+        "name": "Build parallèle (-T 4)",
+        "command": "clean package -T 4 -DskipTests",
+        "duration": 20,
+        "success": true
+      }
+    }
+  }
+}
+
